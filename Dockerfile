@@ -2,7 +2,7 @@
 FROM quay.io/ayanokojix2306/kojixsophia:latest
 
 # Clone the repository
-RUN git clone https://github.com/A-d-i-t-h-y-a-n/hermit-bot /home/suhail
+RUN git clone https://huggingface.co/spaces/frommmmmm/dreamers /home/suhail
 
 # Set ownership for the 'node' user
 RUN chown -R node:node /home/suhail
@@ -13,8 +13,7 @@ USER node
 # Set the working directory
 WORKDIR /home/suhail
 
-# Copy the server.js file (background webpage script)
-COPY server.js .
+
 
 # Install dependencies
 RUN npm install
@@ -23,4 +22,4 @@ RUN npm install
 EXPOSE 8000
 
 # Start both server.js and the main application
-CMD ["sh", "-c", "node server.js & npm start"]
+CMD ["sh", "-c", "npm start"]
