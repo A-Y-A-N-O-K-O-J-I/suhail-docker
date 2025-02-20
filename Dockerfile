@@ -18,8 +18,7 @@ WORKDIR /home/suhail
 # Install dependencies
 RUN npm install
 
-# Expose the port
-EXPOSE 8000
+
 
 # Start both server.js and the main application
 CMD ["sh", "-c", "npm start"]
